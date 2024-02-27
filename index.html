@@ -33,31 +33,41 @@
         Los estilos los puedes agregar a tu gusto. Como se muestra en la siguiente imagen de referencia.  (1 Punto)  -->
 
     <!-- header -->
-    <header class="container">
-        <img src="assets/img/sh1.jpg" alt="" srcset="" class="rounded-circle">
-        <h1>Encuentra tu SuperHero</h1>
+    <header class="container-fluid">
+        <div class="row justify-content-center">
+            <section class="col-12 col-md-4 p-0 text-center">
+                <img src="assets/img/sh1.jpg" alt="" srcset="" class="mt-md-5 w-100 d-inline-block p-0 rounded-circle">
+            </section>
+            <section class="col-12 col-md-6 text-md-start text-center p-0">
+                <h1 class="col-12 mt-md-3 pt-md-5 ms-md-3 fw-bold display-3">
+                    Encuentra tu SuperHero
+                </h1>
+                <!-- formulario -->
+                <form class="col-12 mt-md-5 ms-md-3">
+                    <label for="superhero">Ingresa el número del SuperHero a buscar</label>
+                    <input type="text" name="" id="superhero" placeholder="1 a 732">
+                    <button class="btn btn-info" type="submit">Buscar</button>
+                </form>
+            </section>
+        </div>
     </header>
-    <main class="container row">
-        <section class="col-12">
-            <form>
-                <label for="superhero">Ingresa el número del SuperHero a buscar</label>
-                <input type="text" name="" id="superhero" placeholder="1 a 732">
-                <button class="btn btn-primary" type="submit">Buscar</button>
-            </form>
-        </section>
-        <!-- card -->
-        <section>
-            <h2>SuperHero encontrado</h2>
-            <!-- tarjeta inyectada -->
-            <div id="card">
-
+    <main class="container-fluid my-3">
+        <section class="row justify-content-center">
+            <!-- card -->
+            <div class="col-12 col-md-4">
+                <div class="mt-4" id="card">
+                    <!-- tarjeta inyectada -->
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-center">
+                <div id="chartContainer" style="height: 450px; width: 100%;">
+                    <!-- diagrama torta -->
+                </div>
+                <!-- <div id="nulos">
+                     <h4> NO EXISTEN ESTADÍSTICAS </h4>
+                </div> -->
             </div>
         </section>
-        <!-- diagrama torta -->
-
-        <div id="chartContainer1" style="height: 300px; width: 100%;">
-            <!-- Aqui se insertara el grafico -->
-        </div>
     </main>
 
     <!-- bootstrap -->
