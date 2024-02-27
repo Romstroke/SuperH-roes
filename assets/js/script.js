@@ -58,7 +58,6 @@ window.onload = function () {
       for (const key in powerstats) {
         powerstats[key] = powerstats[key] === "null" ? 0 : powerstats[key];
         dataPoints.push({ label: key, y: parseInt(powerstats[key]) });
-        console.log(powerstats[key])
       }
 
       let options = {
