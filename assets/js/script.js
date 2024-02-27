@@ -56,8 +56,9 @@ window.onload = function () {
 
       // BUCLE FOR IN PARA ITERAR EN LOS POWERSTATS
       for (const key in powerstats) {
-          powerstats[key] = powerstats[key] === "null" ? 0 : powerstats[key]
-          dataPoints.push({ label: key, y: (parseInt(powerstats[key])) });
+        powerstats[key] = powerstats[key] === "null" ? 0 : powerstats[key];
+        dataPoints.push({ label: key, y: parseInt(powerstats[key]) });
+        console.log(powerstats[key])
       }
 
       let options = {
@@ -70,7 +71,7 @@ window.onload = function () {
         data: [{
           type: "pie",
           showInLegend: true,
-          legendText: "{label}",
+          legendText: `{label}`,
           startAngle: 240,
           yValueFormatString: "##0",
           indexLabel: `{label} ({y})`,
@@ -81,7 +82,7 @@ window.onload = function () {
       let chart = new CanvasJS.Chart("chartContainer", options);
       chart.render();
     }
- 
+
     //3.4 Consultar la API mediante AJAX con la sintaxis de jQuery. (1 Punto)
     //FUNCIÓN DE SOLICITUD AJAX  
     function requestAjax(valorInput) {
@@ -96,7 +97,6 @@ window.onload = function () {
         dataType: 'json',
         error: function (error) {
           console.error("Error al obtener los datos:", error);
-          $('.text').text("Error al obtener los datos"); // Si hay un error, mostrar un mensaje en la clase text
         }
       });
     }
